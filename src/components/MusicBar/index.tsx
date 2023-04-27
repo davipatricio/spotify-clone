@@ -12,6 +12,7 @@ import { Container, SongControls, GeneralControls, SongInfo } from './styles';
 import RangeInput from '../RangeInput';
 import ArtistNames from './ArtistNames';
 import { Tooltip } from 'react-tooltip';
+import { useUserSettings } from '../../hooks/userSettings';
 
 const DEMO_SONG = {
   name: 'Too Many Nights (feat. Don Toliver & with Future)',
@@ -20,20 +21,20 @@ const DEMO_SONG = {
 };
 
 export default function MusicBar() {
+  const { volume, isCurrentDevice, setSettings } = useUserSettings();
   const [isFavorite, setIsFavorite] = useState(false);
-  const [isCurrentDevice, setIsCurrentDevice] = useState(false);
-  const [volume, setVolume] = useState(100);
 
   const cutSongName = DEMO_SONG.name.length > 30;
 
   const handleVolumeMute = () => {
-    setVolume(volume === 0 ? 100 : 0);
+    setSettings({ volume: volume === 0 ? 100 : 0 });
   };
+
   const handleVolumeChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      setVolume(e.target.valueAsNumber);
+      setSettings({ volume: e.target.valueAsNumber });
     },
-    []
+    [setSettings]
   );
 
   const FavoriteIcon = isFavorite ? MdOutlineFavorite : MdOutlineFavoriteBorder;
@@ -88,7 +89,7 @@ export default function MusicBar() {
         <TbMicrophone2 data-tooltip-content="Letra" />
         <HiOutlineQueueList data-tooltip-content="Fila" />
         <CurrentDeviceIcon
-          onClick={() => setIsCurrentDevice(!isCurrentDevice)}
+          onClick={() => setSettings({ isCurrentDevice: !isCurrentDevice })}
           data-tooltip-content="Conectar a um dispositivo"
         />
 
