@@ -4,9 +4,9 @@ export const Container = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  
   /* debug */
-  margin-top: 10px;
+  margin-top: calc(100vh - 90px);
 
   padding: 10px 16px;
 
@@ -16,5 +16,3 @@ export const Container = styled.footer`
   height: 90px;
   width: 100%;
 `;
-
-export const SongControls = styled.section``;

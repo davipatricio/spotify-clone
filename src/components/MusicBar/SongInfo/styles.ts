@@ -10,6 +10,9 @@ export const Container = styled.section<ContainerProps>`
   align-items: center;
   gap: 15px;
 
+  width: 100%;
+  max-width: 245px;
+
   .album-image {
     position: relative;
 
@@ -77,6 +80,8 @@ export const Container = styled.section<ContainerProps>`
       color: ${({ theme }) => theme.text.primary};
       white-space: nowrap;
       overflow: hidden;
+      font-size: 0.9rem;
+
       width: 230px;
 
       ${({ $cutSongName }) =>
@@ -93,6 +98,7 @@ export const Container = styled.section<ContainerProps>`
     div.artists a {
       color: ${({ theme }) => theme.text.secondary};
       font-size: 0.9rem;
+      white-space: nowrap;
     }
   }
 
