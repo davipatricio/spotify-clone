@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { MdOutlineFavorite, MdOutlineFavoriteBorder } from 'react-icons/md';
 import { Container } from './styles';
-import ArtistNames from '../ArtistNames';
+import ArtistNames from './ArtistNames';
 import { SlArrowUp } from 'react-icons/sl';
 import { useCurrentSong } from '../../../hooks/currentSong';
 
