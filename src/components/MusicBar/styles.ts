@@ -18,21 +18,3 @@ export const Container = styled.footer`
 `;
 
 export const SongControls = styled.section``;
-
-export const GeneralControls = styled.section`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  svg {
-    cursor: pointer;
-    color: ${({ theme }) => theme.text.secondary};
-    font-size: 1.25rem;
-    transition: 0.2s;
-
-    &:hover {
-      color: ${({ theme }) => theme.text.primary};
-      transform: scale(1.02);
-    }
-  }
-`;
