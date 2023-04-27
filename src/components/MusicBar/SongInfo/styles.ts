@@ -11,7 +11,7 @@ export const Container = styled.section<ContainerProps>`
   gap: 15px;
 
   width: 100%;
-  max-width: 245px;
+  max-width: 355px;
 
   .album-image {
     position: relative;
@@ -65,6 +65,8 @@ export const Container = styled.section<ContainerProps>`
   }
 
   .album-info {
+    width: 250px;
+
     a {
       text-decoration: none;
 
@@ -82,7 +84,7 @@ export const Container = styled.section<ContainerProps>`
       overflow: hidden;
       font-size: 0.9rem;
 
-      width: 230px;
+      width: 100%;
 
       ${({ $cutSongName }) =>
         $cutSongName &&
@@ -94,11 +96,18 @@ export const Container = styled.section<ContainerProps>`
         );`}
     }
 
-    div.artists span,
-    div.artists a {
-      color: ${({ theme }) => theme.text.secondary};
-      font-size: 0.9rem;
+    .artists {
       white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 250px;
+
+      & span,
+      & a {
+        color: ${({ theme }) => theme.text.secondary};
+        font-size: 0.9rem;
+        width: 250px;
+      }
     }
   }
 

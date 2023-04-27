@@ -42,4 +42,22 @@ export const Buttons = styled.div`
   }
 `;
 
-export const Progress = styled.div``;
+export const Progress = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  > span {
+    color: ${({ theme }) => theme.text.secondary};
+    font-size: 0.9rem;
+  }
+
+  > input {
+    width: 480px;
+
+    @media (max-width: 1250px) {
+      width: 300px;
+    }
+  }
+`;

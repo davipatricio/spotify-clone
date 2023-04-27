@@ -4,12 +4,13 @@ interface RangeInputProps {
   min: number;
   max: number;
   value: number;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function RangeInput(props: RangeInputProps) {
   const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    props.onChange(e);
+    props.onChange?.(e);
 
   return (
     <ColoredInputRange
@@ -17,6 +18,7 @@ export default function RangeInput(props: RangeInputProps) {
       min={props.min}
       max={props.max}
       value={props.value}
+      disabled={props.disabled}
       onChange={handleValueChange}
     />
   );

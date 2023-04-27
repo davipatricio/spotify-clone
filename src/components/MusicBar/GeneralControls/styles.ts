@@ -5,7 +5,7 @@ export const Container = styled.section`
   align-items: center;
   gap: 10px;
 
-  svg {
+  > svg {
     cursor: pointer;
     color: ${({ theme }) => theme.text.secondary};
     font-size: 1.25rem;
@@ -15,5 +15,9 @@ export const Container = styled.section`
       color: ${({ theme }) => theme.text.primary};
       transform: scale(1.02);
     }
+  }
+
+  > input {
+    width: 100px;
   }
 `;

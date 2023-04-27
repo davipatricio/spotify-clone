@@ -14,7 +14,7 @@ export const ColoredInputRange = styled.input`
   border-radius: 10px;
 
   height: 5px;
-  width: 100px;
+  width: 100%;
 
   &::-webkit-slider-thumb {
     appearance: none;
