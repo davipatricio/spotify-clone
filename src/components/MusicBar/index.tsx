@@ -1,30 +1,19 @@
-import {
-  MdOutlineFavorite,
-  MdOutlineFavoriteBorder,
-  MdOutlineDevicesOther,
-} from 'react-icons/md';
-import { TbMicrophone2, TbVolume3, TbVolume2, TbVolume } from 'react-icons/tb';
+import { useCallback } from 'react';
 import { HiOutlineDeviceMobile } from 'react-icons/hi';
 import { HiOutlineQueueList } from 'react-icons/hi2';
-import { SlArrowUp } from 'react-icons/sl';
-import { useCallback, useState } from 'react';
-import { Container, SongControls, GeneralControls, SongInfo } from './styles';
-import RangeInput from '../RangeInput';
-import ArtistNames from './ArtistNames';
+import {
+  MdOutlineDevicesOther
+} from 'react-icons/md';
+import { TbMicrophone2, TbVolume, TbVolume2, TbVolume3 } from 'react-icons/tb';
 import { Tooltip } from 'react-tooltip';
 import { useUserSettings } from '../../hooks/userSettings';
+import RangeInput from '../RangeInput';
+import { Container, GeneralControls, SongControls } from './styles';
+import SongInfo from './SongInfo';
 
-const DEMO_SONG = {
-  name: 'Too Many Nights (feat. Don Toliver & with Future)',
-  artists: ['Metro Boomin', 'Future', 'Don Toliver'],
-  cover: 'https://i.scdn.co/image/ab67616d00001e02cdce39ecb633bea9ef7705a6',
-};
 
 export default function MusicBar() {
   const { volume, isCurrentDevice, setSettings } = useUserSettings();
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  const cutSongName = DEMO_SONG.name.length > 30;
 
   const handleVolumeMute = () => {
     setSettings({ volume: volume === 0 ? 100 : 0 });
@@ -37,7 +26,6 @@ export default function MusicBar() {
     [setSettings]
   );
 
-  const FavoriteIcon = isFavorite ? MdOutlineFavorite : MdOutlineFavoriteBorder;
   const CurrentDeviceIcon = isCurrentDevice
     ? HiOutlineDeviceMobile
     : MdOutlineDevicesOther;
@@ -55,33 +43,7 @@ export default function MusicBar() {
     <Container>
       <Tooltip anchorSelect="[data-tooltip-content]" noArrow />
 
-      <SongInfo $cutSongName={cutSongName} $hasLikedSong={isFavorite}>
-        <div className="album-image">
-          <img src={DEMO_SONG.cover} alt="Song Cover" draggable="false" />
-          <button type="button">
-            <SlArrowUp />
-          </button>
-        </div>
-
-        <div className="album-info">
-          <a href="#">{DEMO_SONG.name}</a>
-          <div className="artists">
-            <ArtistNames artists={DEMO_SONG.artists} />
-          </div>
-        </div>
-
-        <button
-          onClick={() => setIsFavorite(!isFavorite)}
-          type="button"
-          data-tooltip-content={
-            isFavorite
-              ? 'Remover da sua biblioteca'
-              : 'Salvar na sua biblioteca'
-          }
-        >
-          <FavoriteIcon />
-        </button>
-      </SongInfo>
+      <SongInfo />
 
       <SongControls />
 
