@@ -6,16 +6,25 @@ import {
 import { TiArrowRepeat, TiArrowShuffle } from 'react-icons/ti';
 import { Buttons, Container, Progress } from './styles';
 import RangeInput from '../../RangeInput';
+import { useUserSettings } from '../../../hooks/userSettings';
 
 export default function SongControls() {
+  const { shuffle, repeat, setSettings } = useUserSettings();
+
   return (
     <Container>
       <Buttons>
-        <TiArrowShuffle data-active />
+        <TiArrowShuffle
+          data-active={shuffle}
+          onClick={() => setSettings({ shuffle: !shuffle })}
+        />
         <MdSkipPrevious />
         <MdOutlinePauseCircleFilled data-highlight />
         <MdSkipNext />
-        <TiArrowRepeat />
+        <TiArrowRepeat
+          data-active={repeat}
+          onClick={() => setSettings({ repeat: !repeat })}
+        />
       </Buttons>
 
       <Progress>
