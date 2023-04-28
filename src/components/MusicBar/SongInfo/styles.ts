@@ -8,7 +8,7 @@ interface ContainerProps {
 export const Container = styled.section<ContainerProps>`
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 8px;
 
   width: 100%;
   max-width: 355px;
@@ -82,7 +82,7 @@ export const Container = styled.section<ContainerProps>`
       color: ${({ theme }) => theme.text.primary};
       white-space: nowrap;
       overflow: hidden;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
 
       width: 100%;
 
@@ -105,7 +105,7 @@ export const Container = styled.section<ContainerProps>`
       & span,
       & a {
         color: ${({ theme }) => theme.text.secondary};
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         width: 250px;
       }
     }
