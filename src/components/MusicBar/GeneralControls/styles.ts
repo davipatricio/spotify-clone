@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.section`
   display: flex;
   align-items: center;
+  margin-left: auto;
   gap: 10px;
 
   > svg {

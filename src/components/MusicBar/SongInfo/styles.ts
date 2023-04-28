@@ -9,8 +9,10 @@ export const Container = styled.section<ContainerProps>`
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-right: auto;
 
-  max-width: 355px;
+  min-width: 185px;
+  max-width: 350px;
 
   .album-image {
     position: relative;
@@ -66,7 +68,8 @@ export const Container = styled.section<ContainerProps>`
   .album-info {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    min-width: 150px;
+    max-width: 290px;
 
     a {
       text-decoration: none;
@@ -101,13 +104,13 @@ export const Container = styled.section<ContainerProps>`
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
-      width: 250px;
+      max-width: 250px;
 
       & span,
       & a {
         color: ${({ theme }) => theme.text.secondary};
         font-size: 0.8rem;
-        width: 250px;
+        max-width: 250px;
       }
     }
   }

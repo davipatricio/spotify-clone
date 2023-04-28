@@ -6,6 +6,7 @@ export const Container = styled.section`
   align-items: center;
   justify-content: center;
   gap: 5px;
+  margin: auto;
 
   width: fit-content;
   max-width: 722px;
