@@ -34,7 +34,8 @@ export const Container = styled.aside`
 
     &:hover,
     &:active {
-      border-right: 1px solid #fff;
+      border-right: 1px solid ${({ theme }) => theme.colors.gray};
+      filter: brightness(2);
     }
   }
 `;
@@ -44,7 +45,8 @@ export const LibraryLinks = styled.section`
   gap: 17px;
   margin-top: 16px;
 
-  > div, > a {
+  > div,
+  > a {
     cursor: pointer;
     color: ${({ theme }) => theme.text.secondary};
     display: flex;
@@ -66,4 +68,11 @@ export const LibraryLinks = styled.section`
       font-weight: bold;
     }
   }
+`;
+
+export const Divider = styled.div`
+  height: 1px;
+  width: 100%;
+
+  background: ${({ theme }) => theme.colors.gray};
 `;

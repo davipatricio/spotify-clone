@@ -10,7 +10,6 @@ export const Container = styled.section<ContainerProps>`
   align-items: center;
   gap: 8px;
 
-  width: 100%;
   max-width: 355px;
 
   .album-image {
@@ -65,6 +64,8 @@ export const Container = styled.section<ContainerProps>`
   }
 
   .album-info {
+    display: flex;
+    flex-direction: column;
     width: 250px;
 
     a {
@@ -91,7 +92,7 @@ export const Container = styled.section<ContainerProps>`
         `mask-image: linear-gradient(
           to right,
           rgba(0, 0, 0, 1) 0%,
-          rgba(0, 0, 0, 1) 60%,
+          rgba(0, 0, 0, 1) 80%,
           rgba(0, 0, 0, 0) 100%
         );`}
     }

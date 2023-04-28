@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import { HiOutlineHome } from 'react-icons/hi';
 import { MdOutlineSearch } from 'react-icons/md';
 import { VscLibrary } from 'react-icons/vsc';
-import { Container, LibraryLinks } from './styles';
+import { Container, Divider, LibraryLinks } from './styles';
 
 export default function LateralNavbar() {
   const library = useRef<HTMLDivElement>(null);
@@ -64,6 +64,8 @@ export default function LateralNavbar() {
             <span>Sua Biblioteca</span>
           </a>
         </LibraryLinks>
+
+        <Divider />
       </section>
 
       <span className="resizer" ref={resizable} />

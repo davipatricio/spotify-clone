@@ -50,7 +50,7 @@ export const Progress = styled.div`
 
   > span {
     color: ${({ theme }) => theme.text.secondary};
-    font-size: 0.85rem;
+    font-size: 0.7rem;
     user-select: none;
   }
 
