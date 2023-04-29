@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { HiOutlineHome } from 'react-icons/hi';
-import { MdOutlineSearch } from 'react-icons/md';
+import { HiHeart, HiOutlineHome } from 'react-icons/hi';
+import { MdAdd, MdBookmark, MdOutlineSearch } from 'react-icons/md';
 import { VscLibrary } from 'react-icons/vsc';
-import { Container, Divider, LibraryLinks } from './styles';
+import { Container, Divider, LibraryActions, UserLibraryLinks } from './styles';
 
 export default function LateralNavbar() {
   const library = useRef<HTMLDivElement>(null);
@@ -10,7 +10,7 @@ export default function LateralNavbar() {
 
   const resize = useCallback(
     (e: MouseEvent) => {
-      if (e.clientX < 220 || e.clientX > 280) return;
+      if (e.clientX < 235 || e.clientX > 280) return;
       if (library.current) library.current.style.width = `${e.clientX}px`;
     },
     [library]
@@ -48,7 +48,7 @@ export default function LateralNavbar() {
           alt="spotify logo"
           draggable="false"
         />
-        <LibraryLinks>
+        <UserLibraryLinks>
           <a href="#">
             <HiOutlineHome />
             <span>Início</span>
@@ -63,7 +63,22 @@ export default function LateralNavbar() {
             <VscLibrary />
             <span>Sua Biblioteca</span>
           </a>
-        </LibraryLinks>
+        </UserLibraryLinks>
+
+        <LibraryActions>
+          <a href="#" className="create-playlist">
+            <MdAdd />
+            <span>Criar playlist</span>
+          </a>
+          <a href="#" className="liked">
+            <HiHeart />
+            <span>Músicas Curtidas</span>
+          </a>
+          <a href="#" className="podcasts">
+            <MdBookmark />
+            <span>Seus episódios</span>
+          </a>
+        </LibraryActions>
 
         <Divider />
       </section>

@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 const baseFlexColumn = css`
   display: flex;
   flex-direction: column;
+  gap: 17px;
 `;
 
 export const Container = styled.aside`
@@ -16,9 +17,8 @@ export const Container = styled.aside`
   > section.library {
     ${baseFlexColumn}
 
-    gap: 18px;
     padding: 24px;
-    min-width: 220px;
+    min-width: 235px;
     max-width: 280px;
 
     > img {
@@ -40,9 +40,8 @@ export const Container = styled.aside`
   }
 `;
 
-export const LibraryLinks = styled.section`
+export const UserLibraryLinks = styled.section`
   ${baseFlexColumn}
-  gap: 17px;
   margin-top: 16px;
 
   > div,
@@ -64,8 +63,65 @@ export const LibraryLinks = styled.section`
     }
 
     > span {
-      font-size: 0.8rem;
+      font-size: 0.76rem;
       font-weight: bold;
+    }
+  }
+`;
+
+export const LibraryActions = styled.section`
+  ${baseFlexColumn}
+  margin-top: 25px;
+
+  > a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      span {
+        color: ${({ theme }) => theme.text.primary} !important;
+      }
+
+      svg {
+        filter: brightness(1.3);
+      }
+    }
+
+    span {
+      font-size: 0.8rem;
+    }
+
+    span,
+    svg {
+      transition: all 0.3s;
+      color: ${({ theme }) => theme.text.secondary};
+      font-weight: bold;
+    }
+
+    svg {
+      border-radius: 2px;
+      padding: 2px;
+      height: 24px;
+      width: 24px;
+    }
+
+    &.create-playlist svg {
+      color: #000;
+      padding: 0;
+      background: #ccc;
+    }
+
+    &.liked svg {
+      color: #ccc;
+      background: linear-gradient(135deg, #450af5, #c4efd9);
+    }
+
+    &.podcasts svg {
+      color: #1ed760;
+      background: #006450;
     }
   }
 `;
