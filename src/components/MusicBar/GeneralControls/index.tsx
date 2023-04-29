@@ -7,30 +7,30 @@ import { useUserSettings } from '../../../hooks/userSettings';
 import RangeInput from '../../RangeInput';
 import { Container } from './styles';
 
+const VolumeIcon: React.FC<
+  React.SVGProps<SVGSVGElement> & { volume: number }
+> = (props) => {
+  if (props.volume === 0) return <TbVolume3 {...props} />;
+  if (props.volume > 0 && props.volume <= 50) return <TbVolume2 {...props} />;
+  return <TbVolume {...props} />;
+};
+
 export default function GeneralControls() {
   const { volume, isCurrentDevice, setSettings } = useUserSettings();
 
-  const handleVolumeMute = () => {
-    setSettings({ volume: volume === 0 ? 100 : 0 });
-  };
+  const handleVolumeMute = useCallback(
+    () => setSettings({ volume: volume === 0 ? 100 : 0 }),
+    [volume, setSettings]
+  );
 
   const handleVolumeChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setSettings({ volume: e.target.valueAsNumber });
-    },
+    (volume: number) => setSettings({ volume }),
     [setSettings]
   );
 
   const CurrentDeviceIcon = isCurrentDevice
     ? HiOutlineDeviceMobile
     : MdOutlineDevicesOther;
-
-  // allow all svg props to be passed to the icon
-  const VolumeIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
-    if (volume === 0) return <TbVolume3 {...props} />;
-    if (volume > 0 && volume <= 50) return <TbVolume2 {...props} />;
-    return <TbVolume {...props} />;
-  };
 
   return (
     <Container>
@@ -43,6 +43,7 @@ export default function GeneralControls() {
 
       <VolumeIcon
         onClick={handleVolumeMute}
+        volume={volume}
         data-tooltip-content={volume === 0 ? 'Com som' : 'Mudo'}
       />
       <RangeInput
