@@ -6,6 +6,12 @@ const baseFlexColumn = css`
   gap: 17px;
 `;
 
+const noWrap = css`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
 export const Container = styled.aside`
   display: flex;
   background: ${({ theme }) => theme.colors.black};
@@ -18,7 +24,7 @@ export const Container = styled.aside`
     ${baseFlexColumn}
 
     padding: 24px;
-    min-width: 235px;
+    min-width: 155px;
     max-width: 280px;
 
     > img {
@@ -60,11 +66,13 @@ export const UserLibraryLinks = styled.section`
     > svg {
       height: 24px;
       width: 24px;
+      flex-shrink: 0;
     }
 
     > span {
       font-size: 0.76rem;
       font-weight: bold;
+      ${noWrap};
     }
   }
 `;
@@ -92,6 +100,7 @@ export const LibraryActions = styled.section`
 
     span {
       font-size: 0.8rem;
+      ${noWrap};
     }
 
     span,
@@ -102,6 +111,7 @@ export const LibraryActions = styled.section`
     }
 
     svg {
+      flex-shrink: 0;
       border-radius: 2px;
       padding: 2px;
       height: 24px;

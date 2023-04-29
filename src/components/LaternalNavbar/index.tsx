@@ -10,7 +10,7 @@ export default function LateralNavbar() {
 
   const resize = useCallback(
     (e: MouseEvent) => {
-      if (e.clientX < 235 || e.clientX > 280) return;
+      if (e.clientX < 155 || e.clientX > 280) return;
       if (library.current) library.current.style.width = `${e.clientX}px`;
     },
     [library]
