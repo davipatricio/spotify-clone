@@ -12,6 +12,7 @@ export const Container = styled.section<ContainerProps>`
   margin-right: auto;
 
   min-width: 185px;
+  width: 100%;
   max-width: 350px;
 
   .album-image {

@@ -8,8 +8,8 @@ export const Container = styled.section`
   gap: 5px;
   margin: auto;
 
-  width: fit-content;
   max-width: 722px;
+  width: 100%;
 `;
 
 export const Buttons = styled.div`
@@ -48,18 +48,11 @@ export const Progress = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
+  width: 100%;
 
   > span {
     color: ${({ theme }) => theme.text.secondary};
     font-size: 0.7rem;
     user-select: none;
-  }
-
-  > input {
-    width: 480px;
-
-    @media (max-width: 1250px) {
-      width: 300px;
-    }
   }
 `;
