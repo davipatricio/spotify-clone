@@ -4,7 +4,7 @@ import { MdAdd, MdBookmark, MdOutlineSearch } from 'react-icons/md';
 import { VscLibrary } from 'react-icons/vsc';
 import { Container, Divider, LibraryActions, UserLibraryLinks } from './styles';
 
-export default function LateralNavbar() {
+const LateralNavbar = () => {
   const library = useRef<HTMLDivElement>(null);
   const resizable = useRef<HTMLSpanElement>(null);
 
@@ -86,4 +86,6 @@ export default function LateralNavbar() {
       <span className="resizer" ref={resizable} />
     </Container>
   );
-}
+};
+
+export default LateralNavbar;

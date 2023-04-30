@@ -9,6 +9,7 @@ export default createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.colors.black};
     min-height: 100vh;
+    overflow: hidden;
   }
 
   * {

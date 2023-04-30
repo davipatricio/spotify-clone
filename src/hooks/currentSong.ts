@@ -11,7 +11,7 @@ interface CurrentSongState {
 
 const DEMO_SONG: Omit<CurrentSongState, 'setSong'> = {
   name: 'Too Many Nights (feat. Don Toliver & with Future)',
-  artists: ['Metro Boomin', 'Future', 'Don Toliver', 'Don Toliver', 'Don Toliver', 'Don Toliver', 'Don Toliver', 'Don Toliver', 'Don Toliver'],
+  artists: ['Metro Boomin', 'Future', 'Don Toliver'],
   albumImage:
     'https://i.scdn.co/image/ab67616d00001e02cdce39ecb633bea9ef7705a6',
   albumUrl: 'https://open.spotify.com/album/7txGsnDSqVMoRl6RQ9XyZP',

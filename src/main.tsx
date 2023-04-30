@@ -7,7 +7,7 @@ import { defaultTheme } from './styles/themes/default';
 
 import 'react-tooltip/dist/react-tooltip.css';
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.querySelector('body') as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyles />
