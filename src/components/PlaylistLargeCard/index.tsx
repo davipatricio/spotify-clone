@@ -5,15 +5,17 @@ interface PlaylistLargeCardProps {
   image: string;
   name: string;
   description: string;
+  url: string;
 }
 
 export default function PlaylistLargeCard({
   image,
   name,
   description,
+  url,
 }: PlaylistLargeCardProps) {
   return (
-    <Container>
+    <Container href={url}>
       <div>
         <img
           src={image}

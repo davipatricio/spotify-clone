@@ -48,21 +48,25 @@ export default function Index() {
           name="Descobertas da Semana"
           image="https://placehold.co/164/black/white"
           description="As músicas que você mais ouviu na última semana"
+          url="#"
         />
         <PlaylistLargeCard
           name="Daily Mix 1"
           image="https://placehold.co/150/EEE/31343C?font=oswald&text=Daily+Mix+1"
           description="Lil Tecca, Don Toliver, Metro Boomin e mais"
+          url="#"
         />
         <PlaylistLargeCard
           name="Daily Mix 2"
           image="https://placehold.co/150/EEE/31343C?font=oswald&text=Daily+Mix+2"
           description="DROELOE, NEFFEX, Lil Mosey e mais"
+          url="#"
         />
         <PlaylistLargeCard
           name="Daily Mix 3"
           image="https://placehold.co/150/EEE/31343C?font=oswald&text=Daily+Mix+3"
           description="The Weeknd, Drake, Post Malone e mais"
+          url="#"
         />
       </PlaylistContainer>
     </>
