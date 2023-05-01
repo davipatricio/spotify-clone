@@ -10,6 +10,7 @@ export const Container = styled.header`
 
   padding: 1rem 2rem;
 
+  height: 64px;
   width: 100%;
 `;
 
@@ -23,7 +24,7 @@ export const NavigationButtons = styled.div`
 
   > button {
     cursor: pointer;
-    background: #000;
+    background: rgba(0, 0, 0, 0.87);
     border-radius: 50%;
     border: none;
     color: #fff;
