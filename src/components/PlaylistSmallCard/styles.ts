@@ -14,7 +14,10 @@ export const Container = styled.a`
   text-decoration: none;
 
   height: 80px;
-  width: 470px;
+
+  min-width: 360px;
+  width: 100%;
+  max-width: 470px;
 
   &:hover,
   &:focus {
