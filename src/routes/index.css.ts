@@ -6,4 +6,8 @@ export const PlaylistContainer = styled.header`
   gap: 16px;
 
   margin-top: 10px;
+
+  h2 {
+    grid-column: 1 / -1;
+  }
 `;
