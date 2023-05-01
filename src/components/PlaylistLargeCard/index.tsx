@@ -1,3 +1,4 @@
+import { MdPlayArrow } from 'react-icons/md';
 import { Container } from './styles';
 
 interface PlaylistLargeCardProps {
@@ -13,11 +14,17 @@ export default function PlaylistLargeCard({
 }: PlaylistLargeCardProps) {
   return (
     <Container>
-      <img
-        src={image}
-        draggable={false}
-        alt={`Album cover for playlist ${name}`}
-      />
+      <div>
+        <img
+          src={image}
+          draggable={false}
+          alt={`Album cover for playlist ${name}`}
+        />
+
+        <button type="button">
+          <MdPlayArrow />
+        </button>
+      </div>
       <p>{name}</p>
       <span>{description}</span>
     </Container>

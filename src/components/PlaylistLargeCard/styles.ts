@@ -9,15 +9,77 @@ export const Container = styled.div`
 
   padding: 16px;
 
+  transition: background-color 0.2s;
+
   height: 280px;
   min-width: 175px;
   width: 100%;
   max-width: 240px;
 
-  > img {
+  &:hover,
+  &:focus {
+    background-color: ${({ theme }) => theme.colors.gray};
+
+    button {
+      opacity: 1;
+      animation: bottomToUp 0.3s ease-in-out;
+    }
+  }
+
+  > div {
+    position: relative;
     border-radius: 4px;
     height: 164px;
     width: 164px;
+    overflow: hidden;
+
+    > img {
+      height: 164px;
+      width: 164px;
+    }
+
+    > button {
+      position: absolute;
+      bottom: 7px;
+      right: 5px;
+
+      cursor: pointer;
+
+      opacity: 0;
+
+      background-color: ${({ theme }) => theme.colors.green};
+      border: none;
+      border-radius: 50%;
+
+      color: ${({ theme }) => theme.colors.black};
+
+      transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+      @keyframes bottomToUp {
+        from {
+          transform: translateY(100%);
+        }
+
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      height: 45px;
+      width: 45px;
+
+      > svg {
+        height: 27px;
+        width: 27px;
+      }
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+        transform: scale(1.1);
+        animation: bottomToUp 0.3s ease-in-out;
+      }
+    }
   }
 
   /* Playlist title */
