@@ -28,12 +28,12 @@ export const Container = styled.div`
 
   > div {
     position: relative;
-    border-radius: 4px;
     height: 164px;
     width: 164px;
     overflow: hidden;
 
     > img {
+      border-radius: 4px;
       height: 164px;
       width: 164px;
     }
