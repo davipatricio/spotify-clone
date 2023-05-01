@@ -4,10 +4,10 @@ import GlobalStyles from './styles/GlobalStyles.ts';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from './styles/themes/default';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-
-import 'react-tooltip/dist/react-tooltip.css';
 import Layout from './layout.tsx';
 import Index from './routes/index.tsx';
+
+import 'react-tooltip/dist/react-tooltip.css';
 
 const router = createBrowserRouter([
   {
