@@ -43,30 +43,7 @@ export const Container = styled.a`
   }
 
   > button {
-    cursor: pointer;
-
-    opacity: 0;
-
-    border: none;
-
-    background-color: ${({ theme }) => theme.colors.green};
-    border-radius: 50%;
-
-    color: ${({ theme }) => theme.colors.black};
-
     margin-left: auto;
     margin-right: 10px;
-
-    height: 45px;
-    width: 45px;
-
-    > svg {
-      height: 27px;
-      width: 27px;
-    }
-
-    &:focus {
-      opacity: 1;
-    }
   }
 `;

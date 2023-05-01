@@ -1,4 +1,4 @@
-import { MdPlayArrow } from 'react-icons/md';
+import PlayButton from '../PlayButton';
 import { Container } from './styles';
 
 interface PlaylistSmallCardProps {
@@ -21,9 +21,7 @@ export default function PlaylistSmallCard({
       />
       <span>{name}</span>
 
-      <button type="button">
-        <MdPlayArrow />
-      </button>
+      <PlayButton $smooth $hidden />
     </Container>
   );
 }
