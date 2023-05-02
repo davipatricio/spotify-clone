@@ -12,7 +12,7 @@ const Root = styled.div`
     position: relative;
     
     > #content {
-      padding: 0 2rem;
+      /* padding: 0 0 0 2rem; */
     }
   }
 
@@ -35,7 +35,7 @@ export default function Layout({ children }: { children?: React.ReactNode }) {
 
       <Main>
         <Header />
-        <div id="content">{children}</div>
+        {children}
       </Main>
 
       <MusicBar />
