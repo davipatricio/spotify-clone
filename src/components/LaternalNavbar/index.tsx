@@ -3,6 +3,7 @@ import { HiHeart, HiOutlineHome } from 'react-icons/hi';
 import { MdAdd, MdBookmark, MdOutlineSearch } from 'react-icons/md';
 import { VscLibrary } from 'react-icons/vsc';
 import { Container, Divider, LibraryActions, UserLibraryLinks } from './styles';
+import { Link } from 'react-router-dom';
 
 const LateralNavbar = () => {
   const library = useRef<HTMLDivElement>(null);
@@ -43,41 +44,44 @@ const LateralNavbar = () => {
   return (
     <Container>
       <section className="library" ref={library}>
-        <img
-          src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
-          alt="spotify logo"
-          draggable="false"
-        />
+        <Link to="/">
+          <img
+            src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
+            alt="spotify logo"
+            draggable="false"
+          />
+        </Link>
+
         <UserLibraryLinks>
-          <a href="#">
+          <Link to="/">
             <HiOutlineHome />
             <span>Início</span>
-          </a>
+          </Link>
 
-          <a href="#">
+          <Link to="#">
             <MdOutlineSearch />
             <span>Buscar</span>
-          </a>
+          </Link>
 
-          <a href="#">
+          <Link to="#">
             <VscLibrary />
             <span>Sua Biblioteca</span>
-          </a>
+          </Link>
         </UserLibraryLinks>
 
         <LibraryActions>
-          <a href="#" className="create-playlist">
+          <Link to="#" className="create-playlist">
             <MdAdd />
             <span>Criar playlist</span>
-          </a>
-          <a href="#" className="liked">
+          </Link>
+          <Link to="#" className="liked">
             <HiHeart />
             <span>Músicas Curtidas</span>
-          </a>
-          <a href="#" className="podcasts">
+          </Link>
+          <Link to="#" className="podcasts">
             <MdBookmark />
             <span>Seus episódios</span>
-          </a>
+          </Link>
         </LibraryActions>
 
         <Divider />

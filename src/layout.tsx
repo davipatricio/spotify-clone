@@ -1,19 +1,16 @@
 import styled from 'styled-components';
-import Header from './components/Header';
-import LateralNavbar from './components/LaternalNavbar';
-import MusicBar from './components/MusicBar';
+import loadable from '@loadable/component';
+
+const Header = loadable(() => import('./components/Header'));
+const LateralNavbar = loadable(() => import('./components/LaternalNavbar'));
+const MusicBar = loadable(() => import('./components/MusicBar'));
 
 const Root = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
 
-
   > main {
     position: relative;
-    
-    > #content {
-      /* padding: 0 0 0 2rem; */
-    }
   }
 
   /* Music bar */

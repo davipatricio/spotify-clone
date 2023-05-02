@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 const commonCSS = css`
@@ -14,7 +15,7 @@ const commonCSS = css`
   width: 100%;
 `;
 
-export const LargeContainer = styled.a`
+export const LargeContainer = styled(Link)`
   ${commonCSS}
 
   flex-direction: column;
@@ -83,7 +84,7 @@ export const LargeContainer = styled.a`
   }
 `;
 
-export const SmallContainer = styled.a`
+export const SmallContainer = styled(Link)`
   ${commonCSS}
 
   align-items: center;

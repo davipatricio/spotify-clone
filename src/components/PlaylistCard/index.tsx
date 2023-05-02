@@ -19,7 +19,7 @@ export default function PlaylistCard({
   const Container = variant === 'small' ? SmallContainer : LargeContainer;
 
   return (
-    <Container href={url}>
+    <Container to={url}>
       {variant === 'small' ? (
         <>
           <img

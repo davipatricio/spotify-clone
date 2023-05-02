@@ -27,7 +27,7 @@ export const Container = styled.aside`
     min-width: 155px;
     max-width: 280px;
 
-    > img {
+    > a img {
       height: 40px;
       width: 131px;
     }

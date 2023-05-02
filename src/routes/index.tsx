@@ -1,5 +1,7 @@
-import PlaylistCard from '../components/PlaylistCard';
+import loadable from '@loadable/component';
 import { PlaylistContainer } from './index.css';
+
+const PlaylistCard = loadable(() => import('../components/PlaylistCard'));
 
 export default function Index() {
   const dayPeriod = () => {
@@ -17,31 +19,31 @@ export default function Index() {
         <PlaylistCard
           name="K-pop"
           image="https://placehold.co/164/green/white"
-          url="#"
+          url="/playlist/cafebabe"
           variant="small"
         />
         <PlaylistCard
           name="Popular Trap"
           image="https://placehold.co/164/orange/white"
-          url="#"
+          url="/playlist/cafebabe"
           variant="small"
         />
         <PlaylistCard
           name="EDM"
           image="https://placehold.co/164/purple/white"
-          url="#"
+          url="/playlist/cafebabe"
           variant="small"
         />
         <PlaylistCard
           name="Lo-fi"
           image="https://placehold.co/164/blue/white"
-          url="#"
+          url="/playlist/cafebabe"
           variant="small"
         />
         <PlaylistCard
           name="International Pop"
           image="https://placehold.co/164/darkgrey/white"
-          url="#"
+          url="/playlist/cafebabe"
           variant="small"
         />
       </PlaylistContainer>
@@ -52,28 +54,28 @@ export default function Index() {
           name="Descobertas da Semana"
           image="https://placehold.co/164/black/white"
           description="As músicas que você mais ouviu na última semana"
-          url="#"
+          url="/playlist/cafebabe"
           variant="large"
         />
         <PlaylistCard
           name="Daily Mix 1"
           image="https://placehold.co/150/EEE/31343C?font=oswald&text=Daily+Mix+1"
           description="Lil Tecca, Don Toliver, Metro Boomin e mais"
-          url="#"
+          url="/playlist/cafebabe"
           variant="large"
         />
         <PlaylistCard
           name="Daily Mix 2"
           image="https://placehold.co/150/EEE/31343C?font=oswald&text=Daily+Mix+2"
           description="DROELOE, NEFFEX, Lil Mosey e mais"
-          url="#"
+          url="/playlist/cafebabe"
           variant="large"
         />
         <PlaylistCard
           name="Daily Mix 3"
           image="https://placehold.co/150/EEE/31343C?font=oswald&text=Daily+Mix+3"
           description="The Weeknd, Drake, Post Malone e mais"
-          url="#"
+          url="/playlist/cafebabe"
           variant="large"
         />
       </PlaylistContainer>
