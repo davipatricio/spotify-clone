@@ -24,8 +24,7 @@ export const LargeContainer = styled.a`
   padding: 16px;
 
   height: 280px;
-  min-width: 175px;
-  max-width: 240px;
+  width: 196px;
 
   &:hover,
   &:focus {
