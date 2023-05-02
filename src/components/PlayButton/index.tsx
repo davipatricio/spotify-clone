@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 interface PlayButtonProps {
   $animated?: boolean;
-  $smooth?: boolean;
   $hidden?: boolean;
-  onClick?: () => void;
+  $smooth?: boolean;
+  onClick?(): void;
 }
 
 const Button = styled.button<PlayButtonProps>`

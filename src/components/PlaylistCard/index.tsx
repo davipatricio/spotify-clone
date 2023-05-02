@@ -2,11 +2,11 @@ import PlayButton from '../PlayButton';
 import { LargeContainer, SmallContainer } from './styles';
 
 interface PlaylistCardProps {
+  description?: string;
+  image: string;
   name: string;
   url: string;
-  image: string;
-  variant: 'small' | 'large';
-  description?: string;
+  variant: 'large' | 'small';
 }
 
 export default function PlaylistCard({
@@ -23,24 +23,24 @@ export default function PlaylistCard({
       {variant === 'small' ? (
         <>
           <img
-            src={image}
-            draggable={false}
             alt={`Album cover for playlist ${name}`}
+            draggable={false}
+            src={image}
           />
           <p>{name}</p>
 
-          <PlayButton $smooth $hidden />
+          <PlayButton $hidden $smooth />
         </>
       ) : (
         <>
           <div>
             <img
-              src={image}
-              draggable={false}
               alt={`Album cover for playlist ${name}`}
+              draggable={false}
+              src={image}
             />
 
-            <PlayButton $animated $smooth $hidden />
+            <PlayButton $animated $hidden $smooth />
           </div>
           <p>{name}</p>
           <span>{description}</span>

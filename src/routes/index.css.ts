@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 interface PlaylistContainerProps {
-  $minWidth?: number;
   $maxWidth?: number;
+  $minWidth?: number;
 }
 
 export const PlaylistContainer = styled.header<PlaylistContainerProps>`

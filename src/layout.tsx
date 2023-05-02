@@ -1,9 +1,9 @@
-import styled from 'styled-components';
 import loadable from '@loadable/component';
+import styled from 'styled-components';
 
-const Header = loadable(() => import('./components/Header'));
-const LateralNavbar = loadable(() => import('./components/LaternalNavbar'));
-const MusicBar = loadable(() => import('./components/MusicBar'));
+const Header = loadable(async () => import('./components/Header'));
+const LateralNavbar = loadable(async () => import('./components/LaternalNavbar'));
+const MusicBar = loadable(async () => import('./components/MusicBar'));
 
 const Root = styled.div`
   display: grid;

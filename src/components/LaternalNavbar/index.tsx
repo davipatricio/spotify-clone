@@ -2,17 +2,17 @@ import { useCallback, useEffect, useRef } from 'react';
 import { HiHeart, HiOutlineHome } from 'react-icons/hi';
 import { MdAdd, MdBookmark, MdOutlineSearch } from 'react-icons/md';
 import { VscLibrary } from 'react-icons/vsc';
-import { Container, Divider, LibraryActions, UserLibraryLinks } from './styles';
 import { Link } from 'react-router-dom';
+import { Container, Divider, LibraryActions, UserLibraryLinks } from './styles';
 
 const LateralNavbar = () => {
   const library = useRef<HTMLDivElement>(null);
   const resizable = useRef<HTMLSpanElement>(null);
 
   const resize = useCallback(
-    (e: MouseEvent) => {
-      if (e.clientX < 155 || e.clientX > 280) return;
-      if (library.current) library.current.style.width = `${e.clientX}px`;
+    (evt: MouseEvent) => {
+      if (evt.clientX < 155 || evt.clientX > 280) return;
+      if (library.current) library.current.style.width = `${evt.clientX}px`;
     },
     [library]
   );
@@ -26,19 +26,15 @@ const LateralNavbar = () => {
     const resizableCopy = resizable.current;
     if (!resizableCopy) return;
 
-    resizableCopy.addEventListener('mousedown', (e) => {
-      e.preventDefault();
+    const handler = (evt: MouseEvent) => {
+      evt.preventDefault();
       window.addEventListener('mousemove', resize);
       window.addEventListener('mouseup', stopResize);
-    });
-
-    return () => {
-      resizableCopy.removeEventListener('mousedown', (e) => {
-        e.preventDefault();
-        window.removeEventListener('mousemove', resize);
-        window.removeEventListener('mouseup', stopResize);
-      });
     };
+
+    resizableCopy.addEventListener('mousedown', handler);
+
+    return () => resizableCopy.removeEventListener('mousedown', handler);
   }, [resizable, resize, stopResize]);
 
   return (
@@ -46,9 +42,9 @@ const LateralNavbar = () => {
       <section className="library" ref={library}>
         <Link to="/">
           <img
-            src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
             alt="spotify logo"
             draggable="false"
+            src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
           />
         </Link>
 
@@ -70,15 +66,15 @@ const LateralNavbar = () => {
         </UserLibraryLinks>
 
         <LibraryActions>
-          <Link to="#" className="create-playlist">
+          <Link className="create-playlist" to="#">
             <MdAdd />
             <span>Criar playlist</span>
           </Link>
-          <Link to="#" className="liked">
+          <Link className="liked" to="#">
             <HiHeart />
             <span>Músicas Curtidas</span>
           </Link>
-          <Link to="#" className="podcasts">
+          <Link className="podcasts" to="#">
             <MdBookmark />
             <span>Seus episódios</span>
           </Link>

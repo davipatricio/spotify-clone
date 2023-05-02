@@ -1,11 +1,11 @@
 import { create } from 'zustand';
 
 interface UserSettingsState {
-  volume: number;
   isCurrentDevice: boolean;
-  shuffle: boolean;
   repeat: boolean;
-  setSettings: (settings: Partial<UserSettingsState>) => void;
+  setSettings(settings: Partial<UserSettingsState>): void;
+  shuffle: boolean;
+  volume: number;
 }
 
 export const useUserSettings = create<UserSettingsState>((set) => ({

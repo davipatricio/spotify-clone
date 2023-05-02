@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@loadable/component": "^5.15.3",
+    "eslint-config-neon": "^0.1.44",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
@@ -25,13 +26,13 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
     "@types/styled-components": "^5.1.26",
-    "@typescript-eslint/eslint-plugin": "^5.59.1",
-    "@typescript-eslint/parser": "^5.59.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
     "@vitejs/plugin-react-swc": "^3.3.0",
     "eslint": "^8.39.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
     "typescript": "^5.0.4",
-    "vite": "^4.3.3"
+    "vite": "^4.3.4"
   }
 }

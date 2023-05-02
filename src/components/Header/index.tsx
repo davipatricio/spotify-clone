@@ -8,14 +8,14 @@ export default function Header() {
         <button type="button">
           <SlArrowLeft />
         </button>
-        <button type="button" disabled>
+        <button disabled type="button">
           <SlArrowRight />
         </button>
       </NavigationButtons>
 
       <AccountButtons>
-        <button type="button"></button>
-        <button type="button"></button>
+        <button type="button" />
+        <button type="button" />
       </AccountButtons>
     </Container>
   );

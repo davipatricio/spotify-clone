@@ -1,12 +1,12 @@
 import { create } from 'zustand';
 
 interface CurrentSongState {
-  name: string;
-  artists: string[];
   albumImage: string;
   albumUrl: string;
+  artists: string[];
+  name: string;
 
-  setSong: (song: Omit<CurrentSongState, 'setSong'>) => void;
+  setSong(song: Omit<CurrentSongState, 'setSong'>): void;
 }
 
 const DEMO_SONG: Omit<CurrentSongState, 'setSong'> = {

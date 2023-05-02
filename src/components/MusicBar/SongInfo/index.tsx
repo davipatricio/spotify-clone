@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { MdOutlineFavorite, MdOutlineFavoriteBorder } from 'react-icons/md';
-import { Container } from './styles';
-import ArtistNames from './ArtistNames';
 import { SlArrowUp } from 'react-icons/sl';
 import { useCurrentSong } from '../../../hooks/currentSong';
+import ArtistNames from './ArtistNames';
+import { Container } from './styles';
 
 export default function SongInfo() {
   const currentSong = useCurrentSong();
@@ -19,9 +19,9 @@ export default function SongInfo() {
         {currentSong.albumImage && (
           <a href={currentSong.albumUrl}>
             <img
-              src={currentSong.albumImage}
               alt="Song Cover"
               draggable="false"
+              src={currentSong.albumImage}
             />
           </a>
         )}
@@ -39,11 +39,11 @@ export default function SongInfo() {
       </div>
 
       <button
-        onClick={() => setIsFavorite(!isFavorite)}
-        type="button"
         data-tooltip-content={
           isFavorite ? 'Remover da sua biblioteca' : 'Salvar na sua biblioteca'
         }
+        onClick={() => setIsFavorite(!isFavorite)}
+        type="button"
       >
         <FavoriteIcon />
       </button>

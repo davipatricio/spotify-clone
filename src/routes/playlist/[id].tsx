@@ -4,11 +4,10 @@ export default function Playlist() {
   // const { id } = useParams();
 
   return (
-    <>
-      <Header>
+    <Header>
         <img
-          draggable="false"
           alt="Daily Mix 4"
+          draggable="false"
           src="https://placehold.co/164/EEE/31343C?font=oswald&text=Daily+Mix+4"
         />
 
@@ -19,8 +18,8 @@ export default function Playlist() {
 
           <PlaylistInfo>
             <img
-              src="https://cdn.worldvectorlogo.com/logos/spotify-2.svg"
               alt="Spotify"
+              src="https://cdn.worldvectorlogo.com/logos/spotify-2.svg"
             />
             <a href="https://open.spotify.com/user/spotify">Spotify</a>
             <span>50 músicas,</span>
@@ -28,6 +27,5 @@ export default function Playlist() {
           </PlaylistInfo>
         </div>
       </Header>
-    </>
   );
 }

@@ -4,9 +4,9 @@ import {
   MdSkipPrevious,
 } from 'react-icons/md';
 import { TiArrowRepeat, TiArrowShuffle } from 'react-icons/ti';
-import { Buttons, Container, Progress } from './styles';
-import RangeInput from '../../RangeInput';
 import { useUserSettings } from '../../../hooks/userSettings';
+import RangeInput from '../../RangeInput';
+import { Buttons, Container, Progress } from './styles';
 
 export default function SongControls() {
   const { shuffle, repeat, setSettings } = useUserSettings();
@@ -29,7 +29,7 @@ export default function SongControls() {
 
       <Progress>
         <span>0:00</span>
-        <RangeInput min={0} max={100} value={5} disabled />
+        <RangeInput disabled max={100} min={0} value={5} />
         <span>3:53</span>
       </Progress>
     </Container>
