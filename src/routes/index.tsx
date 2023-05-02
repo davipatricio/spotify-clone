@@ -1,20 +1,21 @@
 import loadable from '@loadable/component';
+import { useMemo } from 'react';
 import { PlaylistContainer } from './index.css';
 
 const PlaylistCard = loadable(() => import('../components/PlaylistCard'));
 
 export default function Index() {
-  const dayPeriod = () => {
+  const dayPeriod = useMemo(() => {
     const hour = new Date().getHours();
     if (hour >= 0 && hour < 12) return 'Bom dia';
     if (hour >= 12 && hour < 18) return 'Boa tarde';
     return 'Boa noite';
-  };
+  }, []);
 
   return (
     <>
       <PlaylistContainer $minWidth={360}>
-        <h2>{dayPeriod()}</h2>
+        <h2>{dayPeriod}</h2>
 
         <PlaylistCard
           name="K-pop"
