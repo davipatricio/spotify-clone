@@ -1,17 +1,22 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
+  position: sticky;
+  top: 0;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  background: #ffffff94;
-  backdrop-filter: blur(10px);
+  background: transparent;
+  backdrop-filter: blur(5px);
 
   padding: 1rem 2rem;
 
   height: 64px;
   width: 100%;
+
+  z-index: 10;
 `;
 
 export const NavigationButtons = styled.div`

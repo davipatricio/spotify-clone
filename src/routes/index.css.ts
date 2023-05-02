@@ -12,7 +12,7 @@ export const PlaylistContainer = styled.header<PlaylistContainerProps>`
   );
   gap: 16px;
 
-  margin-top: 25px;
+  margin-top: 26px;
 
   h2 {
     grid-column: 1 / -1;

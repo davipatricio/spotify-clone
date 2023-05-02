@@ -7,8 +7,13 @@ const Root = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
 
-  main > #content {
-    padding: 0 2rem;
+
+  > main {
+    position: relative;
+    
+    > #content {
+      padding: 0 2rem;
+    }
   }
 
   /* Music bar */
