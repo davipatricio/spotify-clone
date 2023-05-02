@@ -24,8 +24,8 @@ const routes: RouteObject[] = [
 ];
 
 for (const route of Object.keys(ROUTES)) {
-  // eslint-disable-next-line jsdoc/multiline-blocks, tsdoc/syntax
-  const Element = loadable(async () => import(/** @vite-ignore */ route));
+  // eslint-disable-next-line jsdoc/multiline-blocks, jsdoc/no-bad-blocks
+  const Element = loadable(async () => import(/* @vite-ignore */ route));
 
   const path = route
     .replaceAll(/\/src\/routes|index|\.tsx$/g, '')
