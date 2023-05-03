@@ -14,7 +14,7 @@ export default function Index() {
 
   return (
     <>
-      <PlaylistContainer $minWidth={360}>
+      <PlaylistContainer $maxWidth="max-content" $minWidth={380}>
         <h2>{dayPeriod}</h2>
 
         <PlaylistCard

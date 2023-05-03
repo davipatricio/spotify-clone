@@ -95,7 +95,7 @@ export const SmallContainer = styled(Link)`
   height: 80px;
 
   min-width: 360px;
-  max-width: 470px;
+  max-width: 500px;
 
   &:hover,
   &:focus {
