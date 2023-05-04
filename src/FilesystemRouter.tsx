@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import type { RouteObject } from 'react-router-dom';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import NoInternetBoundary from './components/NoInternetBoundary/index.tsx';
 import { defaultTheme } from './styles/themes/default.ts';
 
 const Layout = loadable(async () => import('./layout'));
@@ -35,9 +36,11 @@ for (const route of Object.keys(ROUTES)) {
   routes[0].children?.push({
     path,
     element: (
-      <Suspense fallback={null} >
-        <Element />
-      </Suspense>
+      <NoInternetBoundary>
+        <Suspense fallback={null}>
+          <Element />
+        </Suspense>
+      </NoInternetBoundary>
     ),
   });
 }
