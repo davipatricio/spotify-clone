@@ -2,7 +2,9 @@ import loadable from '@loadable/component';
 import styled from 'styled-components';
 
 const Header = loadable(async () => import('./components/Header'));
-const LateralNavbar = loadable(async () => import('./components/LaternalNavbar'));
+const LateralNavbar = loadable(
+  async () => import('./components/LaternalNavbar')
+);
 const MusicBar = loadable(async () => import('./components/MusicBar'));
 
 const Root = styled.div`
