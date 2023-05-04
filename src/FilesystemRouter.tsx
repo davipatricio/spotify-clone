@@ -1,4 +1,5 @@
 import loadable from '@loadable/component';
+import { Suspense, lazy } from 'react';
 import type { RouteObject } from 'react-router-dom';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
@@ -9,7 +10,7 @@ const GlobalStyles = loadable(async () => import('./styles/GlobalStyles'));
 
 const ROUTES = import.meta.glob('/src/routes/**/[a-z[]*.tsx', {
   eager: false,
-});
+}) as Record<string, () => Promise<{ default(): JSX.Element }>>;
 
 const routes: RouteObject[] = [
   {
@@ -24,8 +25,7 @@ const routes: RouteObject[] = [
 ];
 
 for (const route of Object.keys(ROUTES)) {
-  // eslint-disable-next-line jsdoc/multiline-blocks, jsdoc/no-bad-blocks
-  const Element = loadable(async () => import(/* @vite-ignore */ route));
+  const Element = lazy(ROUTES[route]);
 
   const path = route
     .replaceAll(/\/src\/routes|index|\.tsx$/g, '')
@@ -34,7 +34,11 @@ for (const route of Object.keys(ROUTES)) {
 
   routes[0].children?.push({
     path,
-    element: <Element />,
+    element: (
+      <Suspense fallback={null} >
+        <Element />
+      </Suspense>
+    ),
   });
 }
 
