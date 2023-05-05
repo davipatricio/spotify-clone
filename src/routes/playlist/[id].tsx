@@ -1,10 +1,13 @@
-import { Header, PlaylistInfo } from './index.css';
+import { MdMoreHoriz } from 'react-icons/md';
+import PlayButton from '../../components/PlayButton';
+import { Header, PlaySection, PlaylistInfo } from './index.css';
 
 export default function Playlist() {
   // const { id } = useParams();
 
   return (
-    <Header>
+    <>
+      <Header>
         <img
           alt="Daily Mix 4"
           draggable="false"
@@ -27,5 +30,11 @@ export default function Playlist() {
           </PlaylistInfo>
         </div>
       </Header>
+
+      <PlaySection>
+        <PlayButton $smooth />
+        <MdMoreHoriz />
+      </PlaySection>
+    </>
   );
 }

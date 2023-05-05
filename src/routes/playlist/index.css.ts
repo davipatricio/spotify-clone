@@ -74,3 +74,32 @@ export const PlaylistInfo = styled.div`
     }
   }
 `;
+
+export const PlaySection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px;
+
+  padding: 20px 2rem;
+
+  > button {
+    height: 55px;
+    width: 55px;
+
+    > svg {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  > svg {
+    color: ${({ theme }) => theme.text.secondary};
+    font-size: 2rem;
+    transition: 0.2s;
+
+    &:hover {
+      color: ${({ theme }) => theme.text.primary};
+    }
+  }
+`;
