@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-interface PlaylistContainerProps {
-  $maxWidth?: number | string;
-  $minWidth?: number | string;
-}
-
 function handleGrid(minWidth?: number | string, maxWidth?: number | string) {
   let string = 'grid-template-columns: repeat(auto-fill, minmax(';
   if (minWidth) {
@@ -24,12 +19,18 @@ function handleGrid(minWidth?: number | string, maxWidth?: number | string) {
   return string;
 }
 
+interface PlaylistContainerProps {
+  $maxWidth?: number | string;
+  $minWidth?: number | string;
+}
+
 export const PlaylistContainer = styled.header<PlaylistContainerProps>`
   display: grid;
   ${({ $minWidth, $maxWidth }) => handleGrid($minWidth, $maxWidth)}
 
   gap: 16px;
   margin-top: 26px;
+  padding: 42px 2rem 0;
 
   width: 100%;
 

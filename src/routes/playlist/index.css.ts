@@ -7,9 +7,9 @@ export const Header = styled.header`
 
   background-color: #ffffff12;
 
-  padding: 20px 2rem;
+  padding: 100px 2rem 20px;
 
-  height: 320px;
+  min-height: 320px;
   width: 100%;
 
   > img {
